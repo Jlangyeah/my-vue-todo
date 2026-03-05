@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import path from 'path'
 
 // 注意：base的值 = /你的GitHub仓库名/（必须以/开头和结尾）
 // 例如仓库名是vue3-todolist，就写 '/vue3-todolist/'
@@ -7,6 +8,11 @@ const base = '/my-vue-todo/'
 
 export default defineConfig({
   plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname,'./src')
+    }
+  },
   // 核心配置：适配GitHub Pages路径
   base: process.env.NODE_ENV === 'production' ? base : '/',
   server: {

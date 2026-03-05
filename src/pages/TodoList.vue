@@ -91,7 +91,7 @@
       width="500px"
       :close-on-click-modal="false"
     >
-      <el-form :model="editForm" :rules="rules" ref="editFormRef" label-width="0px">
+      <el-form :model="editForm" :rules="rules" ref="editFormRef" label-width="80px">
         <el-form-item prop="text">
           <el-input
             v-model="editForm.text"
@@ -101,7 +101,7 @@
           ></el-input>
         </el-form-item>
         <!-- 编辑时可手动修改分类 -->
-        <el-form-item label="分类：">
+        <el-form-item label="分类：" label-width="80px">
           <el-select v-model="editForm.category">
             <el-option label="学习" value="学习"></el-option>
             <el-option label="工作" value="工作"></el-option>
@@ -112,7 +112,7 @@
       </el-form>
       <template v-slot:footer>
         <el-button @click="editDialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="handleEditConfirm">确认修改</el-button>
+        <el-button type="primary"  @click="handleEditConfirm">确认修改</el-button>
       </template>
     </el-dialog>
   </div>
